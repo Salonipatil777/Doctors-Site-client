@@ -1,13 +1,23 @@
 import React from 'react';
+import '../src/vendor/line-awesome/css/line-awesome.min.css'
+import '../src/vendor/font-awesome/css/all.min.css'
+import '../src/vendor/flaticon/flaticon.css'
+import '../src/vendor/themify/themify-icons.css'
+import './vendor/bootstrap-select/css/bootstrap-select.min.css'
+import './vendor/swiper/swiper.min.css'
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
