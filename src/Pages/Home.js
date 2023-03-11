@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import bg1 from "../images/main-banner/bg1.jpg";
 import home from "../images/home.webp";
 import trangleOrange from "../images/shap/trangle-orange.png";
@@ -18,11 +18,64 @@ import circleOrange from "../images/shap/circle-orange.png";
 import waveBlue from "../images/shap/wave-blue.png";
 import circledots from "../images/shap/circle-dots.png";
 import linebg from "../images/appointment/line-bg.png";
+import mobile from "../images/appointment/mobile.png";
+import women from "../images/appointment/women.png";
+import mapPin from "../images/appointment/map-pin.png";
+import check from "../images/appointment/check.png";
+import chat from "../images/appointment/chat.png";
+import setting from "../images/appointment/setting.png";
 import squareRoted from "../images/shap/square-rotate.png";
 import shape from "../images/testimonials/shape.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { RESET, bookUser } from "../redux/features/auth/authSlice";
+import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+
+const initialState = {
+  name: "",
+  phone: "",
+  department: "",
+  doctor: "",
+  date: "",
+};
 
 const Home = () => {
+  const [formData, setFormData] = useState(initialState);
+  const { name, phone, department, doctor, date } = formData;
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { isLoggledIn, isSuccess } = useSelector((state) => state.auth);
+
+  const appointUser = async (e) => {
+    e.preventDefault();
+    if (!name || !phone || !department || !doctor || !date) {
+      return toast.error("All fields are required");
+    }
+
+    const userData = {
+      name,
+      phone,
+      department,
+      doctor,
+      date,
+    };
+    // console.log(userData);
+    await dispatch(bookUser(userData));
+  };
+
+  useEffect(() => {
+    if (isSuccess && isLoggledIn) {
+      navigate("/");
+    }
+    dispatch(RESET());
+  }, [isLoggledIn, isSuccess, dispatch, navigate]);
+
+  const handleInputs = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
   return (
     <>
       <div className="page-content bg-white">
@@ -285,6 +338,118 @@ const Home = () => {
           <img className="pt-img1 animate1" src={circleOrange} alt="" />
           <img className="pt-img2 animate2" src={plusOrange} alt="" />
           <img className="pt-img3 animate3" src={circledots} alt="" />
+        </section>
+
+        {/* <!-- Appointment --> */}
+        <section className="section-area account-wraper1">
+          <div className="container-fluid">
+            <div
+              className="appointment-inner section-sp2"
+              style={{
+                backgroundImage: `url(${linebg})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "20px 140px",
+              }}
+            >
+              <div className="container">
+                <div className="row align-items-center">
+                  <div className="col-xl-5 col-lg-6 col-md-6">
+                    <div className="appointment-form form-wraper">
+                      <h3 className="title">Book Appointment</h3>
+                      <form onSubmit={appointUser}>
+                    <div className="form-group">
+                      <select
+                        name="department"
+                        className="form-select"
+                        value={department}
+                        onChange={handleInputs}
+                      >
+                        <option selected>Selecty Department</option>
+                        <option value="Outpatient department">Outpatient department</option>
+                        <option value="Inpatient Service(IP)">Inpatient Service(IP)</option>
+                        <option value=" Medical Department"> Medical Department</option>
+                        <option value=" Medical Department"> Nursing Department</option>
+                        <option value="Operation Theatre">
+                          Operation Theatre
+                        </option>
+                        <option value="Radiology Department">Radiology Department</option>
+                        <option value="Physical Medicine">
+                          Physical Medicine
+                        </option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <select
+                        name="doctor"
+                        className="form-select"
+                        value={doctor}
+                        onChange={handleInputs}
+                      >
+                        <option selected>Select Doctor</option>
+                        <option value="Dr. Aggarwal Supriya">Dr. Aggarwal Supriya</option>
+                        <option value="Dr. Agnihotri Kumar">Dr. Agnihotri Kumar</option>
+                        <option value="Dr. Agrawal Kumar ">Dr. Agrawal Kumar </option>
+                        <option value="Dr. Sanjay Sachdeva.">Dr. Sanjay Sachdeva.</option>
+                        <option value="Dr. Aditya Gupta.">Dr. Aditya Gupta.</option>
+                        <option value="Dr. Siddhartha Patil">Dr. Siddhartha patil</option>
+                        <option value="Dr. Agrawal Ashu">Dr. Agrawal Ashu </option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <input
+                        name="name"
+                        type="text"
+                        value={name}
+                        onChange={handleInputs}
+                        className="form-control"
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        name="phone"
+                        type="number"
+                        value={phone}
+                        onChange={handleInputs}
+                        className="form-control"
+                        placeholder="Phone Numbers"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        name="date"
+                        type="date"
+                        className="form-control"
+                        value={date}
+                        onChange={handleInputs}
+                      />
+                    </div>
+                    <button type="submit" className="btn btn-secondary btn-lg">
+                      Appointment Now
+                    </button>
+                  </form>
+                    </div>
+                  </div>
+                  <div className="col-xl-7 col-lg-6 col-md-6">
+                    <div className="appointment-thumb">
+                      <img src={mobile} alt="" />
+                      <div className="images-group">
+                        <img className="img1" src={women} alt="" />
+                        <img className="img2" src={mapPin} alt="" />
+                        <img className="img3" src={setting} alt="" />
+                        <img className="img4" src={check} alt="" />
+                        <img className="img5" src={chat} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img className="pt-img1 animate1" src={trangleOrange} alt="" />
+              <img className="pt-img2 animate-wave" src={waveOrange} alt="" />
+              <img className="pt-img3 animate-wave" src={waveBlue} alt="" />
+              <img className="pt-img4 animate2" src={circleOrange} alt="" />
+            </div>
+          </div>
         </section>
 
         {/* <!-- service --> */}
