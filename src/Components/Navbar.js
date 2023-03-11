@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <>
       <header className="header header-transparent rs-nav">
-        <div className="sticky-header navbar-expand-lg">
+        <div className="navbar-expand-lg bg-light navbar-expand-md fixed-top">
           <div className="menu-bar clearfix">
             <div className="container-fluid clearfix">
               <div className="menu-logo logo-dark">
