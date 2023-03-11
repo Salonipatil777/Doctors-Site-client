@@ -18,12 +18,6 @@ import circleOrange from "../images/shap/circle-orange.png";
 import waveBlue from "../images/shap/wave-blue.png";
 import circledots from "../images/shap/circle-dots.png";
 import linebg from "../images/appointment/line-bg.png";
-import mobile from "../images/appointment/mobile.png";
-import women from "../images/appointment/women.png";
-import mapPin from "../images/appointment/map-pin.png";
-import check from "../images/appointment/check.png";
-import chat from "../images/appointment/chat.png";
-import setting from "../images/appointment/setting.png";
 import squareRoted from "../images/shap/square-rotate.png";
 import shape from "../images/testimonials/shape.png";
 import { Link } from "react-router-dom";
@@ -291,85 +285,6 @@ const Home = () => {
           <img className="pt-img1 animate1" src={circleOrange} alt="" />
           <img className="pt-img2 animate2" src={plusOrange} alt="" />
           <img className="pt-img3 animate3" src={circledots} alt="" />
-        </section>
-
-        {/* <!-- Appointment --> */}
-        <section className="section-area account-wraper1">
-          <div className="container-fluid">
-            <div
-              className="appointment-inner section-sp2"
-              style={{
-                backgroundImage: `url(${linebg})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "20px 140px",
-              }}
-            >
-              <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-5 col-lg-6 col-md-6">
-                    <div className="appointment-form form-wraper">
-                      <h3 className="title">Book Appointment</h3>
-                      <form action="#">
-                        <div className="form-group">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Your Name"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Your Age"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Address"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <input
-                            type="number"
-                            className="form-control"
-                            placeholder="Phone Numbers"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <input type="date" className="form-control" />
-                        </div>
-                        <button
-                          type="submit"
-                          className="btn btn-secondary btn-lg"
-                        >
-                          Appointment Now
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                  <div className="col-xl-7 col-lg-6 col-md-6">
-                    <div className="appointment-thumb">
-                      <img src={mobile} alt="" />
-                      <div className="images-group">
-                        <img className="img1" src={women} alt="" />
-                        <img className="img2" src={mapPin} alt="" />
-                        <img className="img3" src={setting} alt="" />
-                        <img className="img4" src={check} alt="" />
-                        <img className="img5" src={chat} alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img className="pt-img1 animate1" src={trangleOrange} alt="" />
-              <img className="pt-img2 animate-wave" src={waveOrange} alt="" />
-              <img className="pt-img3 animate-wave" src={waveBlue} alt="" />
-              <img className="pt-img4 animate2" src={circleOrange} alt="" />
-            </div>
-          </div>
         </section>
 
         {/* <!-- service --> */}
