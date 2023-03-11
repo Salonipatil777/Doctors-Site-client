@@ -99,7 +99,7 @@ const LatestNews = () => {
                   <img src={news2} className="card-img-top" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">
-                      AIIMS Rishikesh conducts succesfull transport of TB
+                      AIIMS Rishikesh conducts successfull transport of TB
                       medicines
                     </h5>
                     <p className="card-text">
@@ -115,7 +115,7 @@ const LatestNews = () => {
                   <img src={news3} className="card-img-top" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">
-                      Covid Free, on corse with Integrity health model.
+                      Covid Free, on course with Integrity health model.
                     </h5>
                     <p className="card-text">
                       The company's top line grew at a strong clip of 17% ahead
@@ -165,11 +165,11 @@ const LatestNews = () => {
                   <img src={news6} alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">
-                      Pvt hosps to stay closed on Sat in protest against right
+                      Pvt hospitals to stay closed on Sat in protest against right
                       to health Bill.
                     </h5>
                     <p className="card-text">
-                      A government document by the zila parishads revealed that
+                      A government document by the zhilla parishads revealed that
                       15 medical officers have been posted in 'Aam Aadmi'
                       clinics across the district. These officers were posted in
                       subsidiary health c.
