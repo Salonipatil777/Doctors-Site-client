@@ -56,13 +56,13 @@ const Footer = () => {
                       <a href="booking.html"><span>Booking</span></a>
                     </li>
                     <li>
-                      <a href="faq.html"><span>Faq's</span></a>
+                      <a href="faq.html"><span>FAQ</span></a>
                     </li>
                     <li>
                       <a href="blog-grid.html"><span>Blogs</span></a>
                     </li>
                     <li>
-                      <a href="team.html"><span>Out Team</span></a>
+                      <a href="team.html"><span>Our Team</span></a>
                     </li>
                   </ul>
                 </div>
@@ -87,14 +87,14 @@ const Footer = () => {
                       <a href="service-detail.html"><span>Precise Diagnosis</span></a>
                     </li>
                     <li>
-                      <a href="service-detail.html"><span>Abmbulance Services</span></a>
+                      <a href="service-detail.html"><span>Ambulance Services</span></a>
                     </li>
                   </ul>
                 </div>
               </div>
               <div className="col-xl-3 col-lg-3 col-md-6">
                 <div className="widget widget_form">
-                  <h3 className="footer-title">Subcribe</h3>
+                  <h3 className="footer-title">Subscribe</h3>
                   <form className="subscribe-form subscription-form mb-30"
                     action="https://meditro.themetrades.com/html/demo/script/mailchamp.php" method="post">
                     <div className="ajax-message"></div>
