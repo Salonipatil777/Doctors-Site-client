@@ -40,7 +40,7 @@ function App() {
   }, [dispatch, isLoggedIn, user]);
   return (
     <BrowserRouter>
-      <ToastContainer />
+      <ToastContainer style={{marginTop:'10%'}}/>
 
       <Routes>
         <Route exact path="/" element={<Layout><Home /></Layout>} />
