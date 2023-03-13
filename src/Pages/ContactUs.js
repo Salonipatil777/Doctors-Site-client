@@ -301,6 +301,8 @@ const ContactUs = () => {
             </div>
           </div>
         </section>
+        <h1 style={{textAlign:'center'}}>Locate Us</h1>
+        <iframe style={{width:'100%',height:'400px'}} id="gmap_canvas" src="https://maps.google.com/maps?q=Kolhapur&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
       </div>
     </>
   );
