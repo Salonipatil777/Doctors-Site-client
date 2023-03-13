@@ -14,11 +14,15 @@ const initialState = {
   department: "",
   doctor: "",
   date: "",
+  time: "",
 };
 
 const Booking = () => {
+  // const value = new Date();
+  // const interval = 60;
+  // const customFormat = "HH:mm";
   const [formData, setFormData] = useState(initialState);
-  const { name, phone, department, doctor, date } = formData;
+  const { name, phone, department, time, doctor, date } = formData;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,7 +31,7 @@ const Booking = () => {
 
   const appointUser = async (e) => {
     e.preventDefault();
-    if (!name || !phone || !department || !doctor || !date) {
+    if (!name || !phone || !department || !doctor || !date || !time) {
       return toast.error("All fields are required");
     }
 
@@ -37,6 +41,7 @@ const Booking = () => {
       department,
       doctor,
       date,
+      time,
     };
     // console.log(userData);
     await dispatch(bookUser(userData));
@@ -119,14 +124,26 @@ const Booking = () => {
                         onChange={handleInputs}
                       >
                         <option selected>Selecty Department</option>
-                        <option value="Outpatient department">Outpatient department</option>
-                        <option value="Inpatient Service(IP)">Inpatient Service(IP)</option>
-                        <option value=" Medical Department"> Medical Department</option>
-                        <option value=" Medical Department"> Nursing Department</option>
+                        <option value="Outpatient department">
+                          Outpatient department
+                        </option>
+                        <option value="Inpatient Service(IP)">
+                          Inpatient Service(IP)
+                        </option>
+                        <option value=" Medical Department">
+                          {" "}
+                          Medical Department
+                        </option>
+                        <option value=" Medical Department">
+                          {" "}
+                          Nursing Department
+                        </option>
                         <option value="Operation Theatre">
                           Operation Theatre
                         </option>
-                        <option value="Radiology Department">Radiology Department</option>
+                        <option value="Radiology Department">
+                          Radiology Department
+                        </option>
                         <option value="Physical Medicine">
                           Physical Medicine
                         </option>
@@ -140,13 +157,27 @@ const Booking = () => {
                         onChange={handleInputs}
                       >
                         <option selected>Select Doctor</option>
-                        <option value="Dr. Aggarwal Supriya">Dr. Aggarwal Supriya</option>
-                        <option value="Dr. Agnihotri Kumar">Dr. Agnihotri Kumar</option>
-                        <option value="Dr. Agrawal Kumar ">Dr. Agrawal Kumar </option>
-                        <option value="Dr. Sanjay Sachdeva.">Dr. Sanjay Sachdeva.</option>
-                        <option value="Dr. Aditya Gupta.">Dr. Aditya Gupta.</option>
-                        <option value="Dr. Siddhartha Patil">Dr. Siddhartha patil</option>
-                        <option value="Dr. Agrawal Ashu">Dr. Agrawal Ashu </option>
+                        <option value="Dr. Aggarwal Supriya">
+                          Dr. Aggarwal Supriya
+                        </option>
+                        <option value="Dr. Agnihotri Kumar">
+                          Dr. Agnihotri Kumar
+                        </option>
+                        <option value="Dr. Agrawal Kumar ">
+                          Dr. Agrawal Kumar{" "}
+                        </option>
+                        <option value="Dr. Sanjay Sachdeva.">
+                          Dr. Sanjay Sachdeva.
+                        </option>
+                        <option value="Dr. Aditya Gupta.">
+                          Dr. Aditya Gupta.
+                        </option>
+                        <option value="Dr. Siddhartha Patil">
+                          Dr. Siddhartha patil
+                        </option>
+                        <option value="Dr. Agrawal Ashu">
+                          Dr. Agrawal Ashu{" "}
+                        </option>
                       </select>
                     </div>
                     <div className="form-group">
@@ -178,6 +209,18 @@ const Booking = () => {
                         onChange={handleInputs}
                       />
                     </div>
+                    <div className="form-group">
+                      <div class="cs-form">
+                        <input
+                        name="time"
+                          type="time"
+                          class="form-control"
+                          value={time}
+                          onChange={handleInputs}
+                        />
+                      </div>
+                    </div>
+
                     <button type="submit" className="btn btn-secondary btn-lg">
                       Appointment Now
                     </button>
