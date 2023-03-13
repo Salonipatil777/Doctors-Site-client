@@ -287,7 +287,7 @@ const authSlice = createSlice({
         state.isLoggledIn = true;
         state.user = action.payload;
         console.log(action.payload);
-        toast.success("Booking appointment successful");
+        toast.success("Contact successful");
       })
       .addCase(contactUser.rejected, (state, action) => {
         state.isLoading = false;
