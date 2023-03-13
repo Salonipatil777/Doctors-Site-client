@@ -117,12 +117,13 @@ const UserList = () => {
                       <th scope="col">Department</th>
                       <th scope="col">Doctor</th>
                       <th scope="col">Date</th>
+                      <th scope="col">Time</th>
                     </tr>
                   </MDBTableHead>
   
                   <MDBTableBody>
                     {currentItems.map((user, index) => {
-                      const { _id, name, phone, department, doctor, date } = user;
+                      const { _id, name, phone, department, doctor, date,time } = user;
                       return (
                         <tr key={_id}>
                           <div className="d-flex align-items-center">
@@ -144,6 +145,9 @@ const UserList = () => {
                           </td>
                           <td>
                             <p className="fw-normal mb-1">{date}</p>
+                          </td>
+                          <td>
+                            <p className="fw-normal mb-1">{time}</p>
                           </td>
                           <td>{/* <ChangeRole _id={_id} email={email} /> */}</td>
                           <td>
