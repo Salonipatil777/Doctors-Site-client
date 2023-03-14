@@ -16,11 +16,20 @@ import manager3 from "../images/team/manager3.jpg";
 import manager4 from "../images/team/manager4.jpg";
 import img1 from "../images/banner/img1.jpg";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Team = () => {
   return (
     <>
       <div className="page-content bg-white">
+      <Helmet>
+          <title>Raj Hospitals Doctors Team</title>
+          <meta
+            name="description"
+            content="Doctors,Managers.
+"
+          />
+        </Helmet>
         {/* <!-- Inner Banner --> */}
         <div className="banner-wraper">
           <div
