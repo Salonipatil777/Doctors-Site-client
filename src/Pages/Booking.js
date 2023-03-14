@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RESET, bookUser } from "../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 
 const initialState = {
   name: "",
@@ -61,6 +62,10 @@ const Booking = () => {
   return (
     <>
       <div className="page-content bg-white">
+        <Helmet>
+          <title>Booking</title>
+          <meta name="description" content="For Appointment"/>
+        </Helmet>
         {/* <!-- Inner Banner --> */}
         <div className="banner-wraper">
           <div
@@ -212,7 +217,7 @@ const Booking = () => {
                     <div className="form-group">
                       <div class="cs-form">
                         <input
-                        name="time"
+                          name="time"
                           type="time"
                           class="form-control"
                           value={time}
