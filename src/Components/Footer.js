@@ -20,7 +20,7 @@ import waveBlue from "../images/shap/wave-blue.png";
 import circledots from "../images/shap/circle-dots.png";
 
 const Footer = () => {
-  const shareUrl = "https://www.pakkamarwadi.tk/";
+  const shareUrl = "https://raj-hospital.vercel.app/";
   return (
     <>
       {/* <!-- Footer ==== --> */}
