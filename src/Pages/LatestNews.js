@@ -14,11 +14,17 @@ import trangleOrange from "../images/shap/trangle-orange.png";
 import squaredots from "../images/shap/square-dots-orange.png";
 import lineCircle from "../images/shap/line-circle-blue.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const LatestNews = () => {
   return (
     <>
       <div className="page-content bg-white">
+      <Helmet>
+          <title>Latest News in Hospitals</title>
+          <meta name="description" content="news from the Raj Hospitals.
+"/>
+        </Helmet>
         {/* <!-- Inner Banner --> */}
         <div className="banner-wraper">
           <div
@@ -99,7 +105,7 @@ const LatestNews = () => {
                   <img src={news2} className="card-img-top" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">
-                      AIIMS Rishikesh conducts successfull transport of TB
+                      AIIMS Rishikesh conducts succesfull transport of TB
                       medicines
                     </h5>
                     <p className="card-text">
@@ -115,7 +121,7 @@ const LatestNews = () => {
                   <img src={news3} className="card-img-top" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">
-                      Covid Free, on course with Integrity health model.
+                      Covid Free, on corse with Integrity health model.
                     </h5>
                     <p className="card-text">
                       The company's top line grew at a strong clip of 17% ahead
@@ -165,11 +171,11 @@ const LatestNews = () => {
                   <img src={news6} alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">
-                      Pvt hospitals to stay closed on Sat in protest against right
+                      Pvt hosps to stay closed on Sat in protest against right
                       to health Bill.
                     </h5>
                     <p className="card-text">
-                      A government document by the zhilla parishads revealed that
+                      A government document by the zila parishads revealed that
                       15 medical officers have been posted in 'Aam Aadmi'
                       clinics across the district. These officers were posted in
                       subsidiary health c.
