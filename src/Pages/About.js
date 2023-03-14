@@ -19,13 +19,17 @@ import dctr1 from '../images/dr1.jpg'
 import dctr5 from '../images/team/dctr5.jpg'
 import img1 from '../images/banner/img1.jpg'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 
 const About = () => {
   return (
     <>
     <div className="page-content bg-white">
-	
+    <Helmet>
+          <title>About Us</title>
+          <meta name="description" content="About Raj Hospital"/>
+        </Helmet>
     {/* <!-- Inner Banner --> */}
     <div className="banner-wraper">
         <div className="page-banner" style={{backgroundImage: `url(${img1})`
