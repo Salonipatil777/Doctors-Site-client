@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RESET, contactUser } from "../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 
 const initialState = {
   name: "",
@@ -61,6 +62,10 @@ const ContactUs = () => {
   return (
     <>
       <div className="page-content bg-white">
+      <Helmet>
+          <title>Contact Us</title>
+          <meta name="description" content="Contact Us for treaments"/>
+        </Helmet>
         {/* <!-- Inner Banner --> */}
         <div className="banner-wraper">
           <div
