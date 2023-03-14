@@ -14,6 +14,7 @@ import waveBlue from "../images/shap/wave-blue.png";
 import circledots from "../images/shap/circle-dots.png";
 import img1 from "../images/banner/img1.jpg";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 
@@ -66,6 +67,14 @@ const UserList = () => {
     return (
       <section>
         <div className="banner-wraper">
+        <Helmet>
+          <title>Get Appointments</title>
+          <meta
+            name="description"
+            content="Admin Only.
+"
+          />
+        </Helmet>
           <div
             className="page-banner"
             style={{ backgroundImage: `url(${img1})` }}
