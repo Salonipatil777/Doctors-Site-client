@@ -20,11 +20,16 @@ import g6 from "../images/gallary/g4.jpg";
 import g7 from "../images/gallary/g5.jpg";
 import g8 from "../images/gallary/g6.jpg";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const BlogDetails = () => {
   return (
     <>
       <div className="page-content bg-white">
+      <Helmet>
+          <title>Explore Blogs in Details</title>
+          <meta name="description" content="Precious Tips To Help You Get Better."/>
+        </Helmet>
         {/* <!-- Inner Banner --> */}
         <div className="banner-wraper">
           <div
