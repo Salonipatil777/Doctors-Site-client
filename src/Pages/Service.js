@@ -4,11 +4,20 @@ import plusblue from "../images/shap/plus-blue.png";
 import waveBlue from "../images/shap/wave-blue.png";
 import circledots from "../images/shap/circle-dots.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Service = () => {
   return (
     <>
       <div className="page-content bg-white">
+        <Helmet>
+          <title>Our Services</title>
+          <meta
+            name="description"
+            content="Diagnostics,Treatments,Surgery,Emergency,etc.
+"
+          />
+        </Helmet>
         {/* <!-- Inner Banner --> */}
         <div className="banner-wraper">
           <div
