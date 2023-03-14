@@ -19,12 +19,16 @@ import pic4 from "../images/testimonials/pic4.jpg";
 import pic5 from "../images/testimonials/pic5.jpg";
 import pic6 from "../images/testimonials/pic6.jpg";
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Blog = () => {
   return (
     <>
     <div className="page-content bg-white">
-	
+	<Helmet>
+          <title>Explore Blogs</title>
+          <meta name="description" content="Blogs"/>
+        </Helmet>
     {/* <!-- Inner Banner --> */}
     <div className="banner-wraper">
         <div className="page-banner" style={{backgroundImage:`url(${img1})`}}>
