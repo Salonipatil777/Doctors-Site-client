@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RESET, login } from "../redux/features/auth/authSlice";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import { Helmet } from "react-helmet";
 
 const initialState = {
   email: "",
@@ -63,6 +64,14 @@ const Login = () => {
 
       {/* <!-- Login --> */}
       <div className="section-area account-wraper2">
+        <Helmet>
+          <title>Login</title>
+          <meta
+            name="description"
+            content="Login to see contacts and appoinments.
+"
+          />
+        </Helmet>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-5 col-lg-6 col-md-8">
