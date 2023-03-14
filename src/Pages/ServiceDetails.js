@@ -7,11 +7,20 @@ import check from "../images/services/check.png";
 import pdf from "../images/icon/pdf.png";
 import doc from "../images/icon/doc.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ServiceDetails = () => {
   return (
     <>
       <div className="page-content bg-white">
+      <Helmet>
+          <title>Explore Services</title>
+          <meta
+            name="description"
+            content="Diagnostics,Treatments,Surgery,Emergency,etc.
+"
+          />
+        </Helmet>
         {/* <!-- Inner Banner --> */}
         <div className="banner-wraper">
           <div
