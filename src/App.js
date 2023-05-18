@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import {Helmet} from 'react-helmet'
 import "react-toastify/dist/ReactToastify.css";
 import {BrowserRouter} from 'react-router-dom'
 import Home from "./Pages/Home";
@@ -24,6 +25,7 @@ import {  getUser, selectIsLoggedIn, selectUser } from "./redux/features/auth/au
 import { useEffect } from "react";
 import UserList from "./Pages/UserList";
 import ContactList from "./Pages/ContactList";
+import ScrollToTop from "./Components/ScrollTop/ScrollToTop";
 
 axios.defaults.withCredentials = true;
 
@@ -40,8 +42,13 @@ function App() {
   }, [dispatch, isLoggedIn, user]);
   return (
     <BrowserRouter>
-      <ToastContainer  style={{marginTop:'100px'}}/>
-
+    <ScrollToTop/>
+      <ToastContainer style={{marginTop:'100px'}}/>
+      <Helmet>
+        <title>Raj Hospital</title>
+        <meta name="description" content="Doctor, Medical & Healthcare"/>
+        <meta name='keywords' content="Doctor, Medical & Healthcare"/>
+      </Helmet>
       <Routes>
         <Route exact path="/" element={<Layout><Home /></Layout>} />
         <Route path="/about" element={<Layout><About /></Layout>} />
