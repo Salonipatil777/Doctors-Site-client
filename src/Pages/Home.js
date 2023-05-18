@@ -37,12 +37,13 @@ const initialState = {
   department: "",
   doctor: "",
   date: "",
+  time: "",
 };
 
 
 const Home = () => {
   const [formData, setFormData] = useState(initialState);
-  const { name, phone, department, doctor, date } = formData;
+  const { name, phone, department, doctor, date,time } = formData;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ const Home = () => {
 
   const appointUser = async (e) => {
     e.preventDefault();
-    if (!name || !phone || !department || !doctor || !date) {
+    if (!name || !phone || !department || !doctor || !date || !time) {
       return toast.error("All fields are required");
     }
 
@@ -61,6 +62,7 @@ const Home = () => {
       department,
       doctor,
       date,
+      time
     };
     // console.log(userData);
     await dispatch(bookUser(userData));
@@ -425,7 +427,7 @@ const Home = () => {
                         onChange={handleInputs}
                       />
                     </div>
-                    {/* <div className="form-group">
+                    <div className="form-group">
                       <div class="cs-form">
                         <input
                           name="time"
@@ -435,7 +437,7 @@ const Home = () => {
                           onChange={handleInputs}
                         />
                       </div>
-                    </div> */}
+                    </div>
                     <button type="submit" className="btn btn-secondary btn-lg">
                       Appointment Now
                     </button>
