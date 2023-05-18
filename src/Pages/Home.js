@@ -39,6 +39,7 @@ const initialState = {
   date: "",
 };
 
+
 const Home = () => {
   const [formData, setFormData] = useState(initialState);
   const { name, phone, department, doctor, date } = formData;
@@ -424,6 +425,17 @@ const Home = () => {
                         onChange={handleInputs}
                       />
                     </div>
+                    {/* <div className="form-group">
+                      <div class="cs-form">
+                        <input
+                          name="time"
+                          type="time"
+                          class="form-control"
+                          value={time}
+                          onChange={handleInputs}
+                        />
+                      </div>
+                    </div> */}
                     <button type="submit" className="btn btn-secondary btn-lg">
                       Appointment Now
                     </button>
